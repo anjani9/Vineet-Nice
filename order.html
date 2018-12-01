@@ -1,0 +1,555 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Nice Tailor - Mens & Womens</title>
+    <!-- Global stylesheets -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900" rel="stylesheet" type="text/css">
+    <link href="assets/css/icons/icomoon/styles.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/icons/fontawesome/styles.min.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/core.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/components.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/colors.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/custom.css" rel="stylesheet" type="text/css">
+    <!-- /global stylesheets -->
+    <!-- Core JS files -->
+    <!-- Core JS files -->
+    <script type="text/javascript" src="assets/js/pace.min.js"></script>
+    <script type="text/javascript" src="assets/js/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="assets/js/blockui.min.js"></script>
+    <!-- /core JS files -->
+    <!-- plugin files -->
+    <script type="text/javascript" src="assets/js/app.js"></script>
+    <script type="text/javascript" src="assets/js/uniform.min.js"></script>
+    <script type="text/javascript" src="assets/js/validate.min.js"></script>
+    <script type="text/javascript" src="assets/js/select2.min.js"></script>
+    <script type="text/javascript" src="assets/js/datatables.min.js"></script>
+    <script type="text/javascript" src="assets/js/noty.min.js"></script>
+    <script type="text/javascript" src="assets/js/custom.js"></script>
+    <!-- /plugin files -->
+    <!-- page specific js -->
+    <script type="text/javascript" src="assets/js/moment.min.js"></script>
+    <script type="text/javascript" src="assets/js/daterangepicker.js"></script>
+    <script type="text/javascript" src="assets/js/order.js"></script>
+    <!-- /page specific js -->
+</head>
+<body>
+    <!-- Main navbar -->
+    <div class="navbar navbar-inverse">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="dashboard.html"><h3>Nice Tailor</h3></a>
+            <ul class="nav navbar-nav visible-xs-block">
+                <li><a data-toggle="collapse" data-target="#navbar-mobile"><i class="icon-tree5"></i></a></li>
+                <li><a class="sidebar-mobile-main-toggle"><i class="icon-paragraph-justify3"></i></a></li>
+            </ul>
+        </div>
+        <div class="navbar-collapse collapse" id="navbar-mobile">
+            <ul class="nav navbar-nav">
+                <li><a class="sidebar-control sidebar-main-toggle hidden-xs"><i class="icon-paragraph-justify3"></i></a></li>
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown dropdown-user">
+                    <a class="dropdown-toggle" data-toggle="dropdown">
+                        <img src="assets/images/placeholder.jpg" alt="">
+                        <span id="adminname"></span>
+                        <i class="caret"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-right">
+                        <li id="aLogout"><a href="#"><i class="icon-switch2"></i> Logout</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- /main navbar -->
+    <!-- Page container -->
+    <div class="page-container">
+        <!-- Page content -->
+        <div class="page-content">
+            <!-- Main sidebar -->
+
+            <div class="sidebar sidebar-main">
+                <div class="sidebar-content">
+                    <!-- User menu -->
+                    <!-- /user menu -->
+                    <!-- Main navigation -->
+                    <div class="sidebar-category sidebar-category-visible">
+                        <div class="category-content no-padding">
+                            <ul class="navigation navigation-main navigation-accordion">
+                                <!-- Main -->
+                                <li class="navigation-header"><span>Main</span> <i class="icon-menu" title="Main pages"></i></li>
+                                <li><a href="dashboard.html"><i class="icon-stats-dots"></i> <span>Dashboard</span></a></li>
+                                <li class="active"><a href="order.html"><i class="icon-clipboard3"></i> <span>Orders</span></a></li>
+                                <li><a href="user.html"><i class="icon-users"></i> <span>User Management</span></a></li>
+                                <li><a href="inventory.html"><i class="icon-cabinet"></i> <span>Inventory Management</span></a></li>
+                                <li><a href="item.html"><i class="icon-stack3"></i> <span>Item Management</span></a></li>
+                                <!--<li><a href="report.html"><i class="icon-file-stats"></i> <span>Reports</span></a></li>-->
+                                <!-- /main -->
+                                <!-- /page kits -->
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- /main navigation -->
+                </div>
+            </div>
+            <!-- /main sidebar -->
+            <!-- Main content -->
+            <div class="content-wrapper">
+                <!-- Page header -->
+                <div class="page-header page-header-default">
+                    <div class="breadcrumb-line">
+                        <h5 class="pageheadertext">Order Management</h5>
+                        <ul class="breadcrumb pageheadercrumb">
+                            <li><a href="dashboard.html"><i class="icon-home2 position-left"></i> Home</a></li>
+                            <li class="active">Order Management</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- /page header -->
+                <!-- Content area -->
+                <div class="content">
+
+                    <!-- Dashboard content -->
+                    <div class="row">
+
+                        <div class="col-lg-12">
+
+                            <div class="panel panel-flat">
+                                <div class="panel-body">
+                                    <div class="tabbable">
+                                        <ul class="nav nav-tabs nav-tabs-highlight">
+                                            <li class="active"><a href="#upcoming" data-tab="upcoming" data-toggle="tab"><i class="icon-calendar position-left"></i> Upcoming Order</a></li>
+                                            <li><a href="#pending" data-tab="pending" data-toggle="tab"><i class="icon-list3 position-left"></i> Pending Order</a></li>
+                                            <li><a href="#createnew" data-toggle="tab" data-tab="create"><i class="icon-newspaper2 position-left"></i> Create New Order</a></li>
+                                        </ul>
+                                        <div class="tab-content">
+                                            <div class="tab-pane fade in active" id="upcoming">
+                                                <table id="upcomingOrder" class="table table-striped table-bordered table-hover">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Order Id</th>
+                                                            <th>Customer Name</th>
+                                                            <th>Employee Name</th>
+                                                            <th>Customer Contact</th>
+                                                            <th>Item</th>
+                                                            <th>Delivery Date</th>
+                                                            <th>Total Amount</th>
+                                                            <th class="text-center">Actions</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody></tbody>
+                                                </table>
+                                            </div>
+                                            <div class="tab-pane fade" id="pending">
+                                                <table id="pendinggOrder" class="table table-striped table-bordered table-hover">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Order Id</th>
+                                                            <th>Customer Name</th>
+                                                            <th>Customer Contact</th>
+                                                            <th>Item</th>
+                                                            <th>Created Date</th>
+                                                            <th>Total Amount</th>
+                                                            <th class="text-center">Actions</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody></tbody>
+                                                </table>
+                                            </div>
+                                            <div class="tab-pane fade" id="createnew">
+                                                <form id="orderfrm">
+
+                                                    <div class="form-group">
+                                                        <div class="row">
+                                                            <div class="col-sm-4">
+                                                                <label>Contact *</label>
+                                                                <input id="ccontact" name="ccontact" type="text" placeholder="Contact" class="form-control number" maxlength="10"/>
+                                                            </div>
+                                                            <div class="col-sm-4">
+                                                                <label class="display-block">&nbsp;</label>
+                                                                <button type="button" class="btn btn-primary pull-left chkuserbtn display-block" onclick="CheckUser()">Check User</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <div class="row">
+                                                            <div class="col-sm-4">
+                                                                <label>First name *</label>
+                                                                <input id="cfname" name="cfname" type="text" placeholder="First Name" class="form-control text usrtxt" />
+                                                            </div>
+                                                            <div class="col-sm-4">
+                                                                <label>Last name *</label>
+                                                                <input id="clname" name="clname" type="text" placeholder="Last Name" class="form-control text usrtxt" />
+                                                            </div>
+                                                            <div class="col-sm-4">
+                                                                <label>Email </label>
+                                                                <input id="cemail" name="cemail" type="text" placeholder="Email" class="form-control email usrtxt" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <div class="row">
+                                                            <div class="col-sm-4">
+                                                                <label>Items </label>
+                                                                <select id="citems" name="citems" class="select-search form-control item_select" data-placeholder="Select Items">
+                                                                    <option value="0"> Select Items </option>
+                                                                </select>
+                                                            </div>
+                                                            <!-- <div class="col-sm-4">
+                                                                <label>Measurement</label>
+                                                                <input id="cmeasurement" name="cmeasurement" type="file" class="form-control" disabled />
+                                                            </div>-->
+															<div class="col-sm-2">
+                                                                <label>Size </label>
+                                                                <select id="citems" name="citems" class="select-search form-control item_select" data-placeholder="Select Size">
+                                                                    <option value="0"> Select Size </option>
+																	<option value="1"> Small</option>
+																	<option value="2"> Medium</option>
+																	<option value="3"> Large</option>
+																	<option value="4"> Extra Large</option>
+																	<option value="5"> 20 x 24</option>
+																	<option value="6"> 26 x 30</option>
+																	<option value="7"> 32 x 36</option>
+																	<option value="8"> 38</option>
+																	<option value="9"> 40</option>
+                                                                </select>
+                                                            </div>
+															<div class="col-sm-2">
+                                                                <label>Quantity </label>
+                                                                <input id="cqty" name="cqty" type="text" placeholder="Quantity" class="form-control number" />
+                                                            </div>															
+                                                            <div class="col-sm-4">
+                                                                <label>Delivery Date</label>
+                                                                <input id="cdeldate" name="cdeldate" type="text" class="form-control daterange-single" required />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <div class="row">
+                                                            <div class="col-sm-4">
+                                                                <label>Total Amount</label>
+                                                                <input id="ctotalamt" name="ctotalamt" type="text" placeholder="Total Amount" class="form-control" disabled />
+                                                            </div>
+                                                            <div class="col-sm-4">
+                                                                <label>Paid</label>
+                                                                <input id="cpaidamt" name="cpaidamt" type="text" placeholder="Paid Amount" class="form-control number" />
+                                                            </div>
+                                                            <div class="col-sm-4">
+                                                                <label>Balance</label>
+                                                                <input id="cbalamt" name="cbalamt" type="text" placeholder="Balance Amount" class="form-control" disabled />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <button id="btnCreateOrder" type="button" class="btn btn-primary pull-right chkuser" onclick="CreateNewOrder()">Create Order</button>
+                                                    <button type="reset" class="btn btn-default pull-right mr-10 chkuser"  onclick="ResetOrderForm()">Reset</button>
+                                                </form>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <!-- /dashboard content -->
+                    <!-- Footer -->
+                    <div class="footer text-muted text-center">
+                        &copy; 2018. <a href="#">Nice Tailor</a> <a href="#" target="_blank"></a>
+                    </div>
+
+                    <!-- /footer -->
+                </div>
+                <!-- /content area -->
+            </div>
+            <!-- /main content -->
+        </div>
+        <!-- /page content -->
+        <!--View Order-->
+
+
+        <div id="order_view" class="modal fade">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header bg-baropurple">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h6 class="modal-title"> View Item </h6>
+                    </div>
+                    <div class="modal-body" style="overflow-wrap: break-word;">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <div class="form-group has-feedback">
+                                    <label>Order id :</label>
+                                    <input id="vorder_id" type="text" name="vorder_id" class="form-control" placeholder="Order Id" disabled="disabled" />
+                                    <div class="form-control-feedback">
+                                        <i class="icon-pencil text-muted"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="form-group has-feedback">
+                                    <label>Delivery Date : </label>
+                                    <input id="vdelivery_date" type="text" name="vdelivery_date" class="form-control" placeholder="Delivery Date" disabled="disabled" />
+                                    <div class="form-control-feedback">
+                                        <i class="icon-calendar3 text-muted"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="form-group has-feedback">
+                                    <label>Items :</label>
+                                    <input id="vitems" type="text" name="vitems" class="form-control" placeholder="Items" disabled="disabled" />
+                                    <div class="form-control-feedback">
+                                        <i class="icon-pencil text-muted"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <div class="form-group has-feedback">
+                                    <label>Customer Name :</label>
+                                    <input id="vcustomer_name" type="text" name="vcustomer_name" class="form-control" placeholder="Customer Name" disabled="disabled" />
+                                    <div class="form-control-feedback">
+                                        <i class="icon-pencil text-muted"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="form-group has-feedback">
+                                    <label>Customer Contact : </label>
+                                    <input id="vmobile" type="text" name="vmobile" class="form-control" placeholder="Contact" disabled="disabled" />
+                                    <div class="form-control-feedback">
+                                        <i class="icon-mobile2 text-muted"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="form-group has-feedback">
+                                    <label>Customer Email :</label>
+                                    <input id="vemail" type="text" name="vemail" class="form-control" placeholder="Email" disabled="disabled" />
+                                    <div class="form-control-feedback">
+                                        <i class="icon-mention text-muted"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <div class="form-group has-feedback">
+                                    <label>Total Amount : </label>
+                                    <input id="vtotal_amount" type="text" name="vtotal_amount" class="form-control" placeholder="Total Amount" disabled="disabled" />
+                                    <div class="form-control-feedback">
+                                        <i class="fa fa-rupee text-muted"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="form-group has-feedback">
+                                    <label>Paid Amount : </label>
+                                    <input id="vpaid" type="text" name="vpaid" class="form-control" placeholder="Paid Amount" disabled="disabled" />
+                                    <div class="form-control-feedback">
+                                        <i class="fa fa-rupee text-muted"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="form-group has-feedback">
+                                    <label>Balance Amount :</label>
+                                    <input id="vbalance" type="text" name="vbalance" class="form-control" placeholder="Balance Amount" disabled="disabled" />
+                                    <div class="form-control-feedback">
+                                        <i class="fa fa-rupee text-muted"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <div class="form-group has-feedback">
+                                    <label>Employee Name: </label>
+                                    <input id="vemployee_name" type="text" name="vemployee_name" class="form-control" placeholder="Employee Not Assigned" disabled="disabled" />
+                                    <div class="form-control-feedback">
+                                        <i class="icon-pencil text-muted"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button class="btn bg-baropurple" data-dismiss="modal"> Cancel </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!--/View Order-->
+        <!--Edit Order-->
+
+        <div id="order_edit" class="modal fade">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header bg-baropurple">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h6 class="modal-title"> Edit Order </h6>
+                    </div>
+                    <form action="#" class="form-validate-jquery" id="orderEdit" autocomplete="off">
+                        <div class="modal-body">
+                            <div class="form-group">
+
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <div class="form-group has-feedback">
+                                                <label>Order id : </label>
+                                                <input id="eorderid" type="text" class="text form-control" name="Order_id" disabled="disabled" />
+                                                <div class="form-control-feedback">
+                                                    <i class="icon-pencil text-muted"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="form-group has-feedback">
+                                                <label>Item : </label>
+                                                <input id="eitems" type="text" class="text form-control" name="Item" disabled="disabled" />
+                                                <div class="form-control-feedback">
+                                                    <i class="icon-pencil text-muted"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="form-group has-feedback">
+                                            <label>Customer Name* : </label>
+                                            <input id="ename" type="text" class="text form-control text" placeholder="Customer Name" required name="Name" disabled="disabled" />
+                                            <div class="form-control-feedback">
+                                                <i class="icon-pencil text-muted"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-6">
+                                        <div class="form-group has-feedback">
+                                            <label>Mobile* :</label>
+                                            <input id="enumber" type="text" class="text form-control number" placeholder="Mobile" required name="mobile" disabled="disabled" />
+                                            <div class="form-control-feedback">
+                                                <i class="icon-mobile2 text-muted"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="form-group has-feedback">
+                                            <label>Email Id* : </label>
+                                            <input id="eemail" type="text" class="text form-control email" placeholder="Email" disabled="disabled" />
+                                            <div class="form-control-feedback">
+                                                <i class="icon-mention text-muted"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label>Assigned Employee : </label>
+                                            <select id="eemployee" name="eemployee" class="select-search form-control emp_select" data-placeholder="Select Employee">
+                                                <option value="0"> Select Employee </option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <div class="form-group has-feedback">
+                                            <label>Total Amount : </label>
+                                            <input id="etotalamt" type="text" class="text form-control" disabled="disabled" />
+                                            <div class="form-control-feedback">
+                                                <i class="fa fa-rupee text-muted"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="form-group has-feedback">
+                                            <label>Paid : </label>
+                                            <input id="epaid" type="text" class="text form-control" disabled="disabled" />
+                                            <div class="form-control-feedback">
+                                                <i class="fa fa-rupee text-muted"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="form-group has-feedback">
+                                            <label>Balance : </label>
+                                            <input id="ebalance" type="text" class="text form-control" disabled="disabled" />
+                                            <div class="form-control-feedback">
+                                                <i class="fa fa-rupee text-muted"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group uporder">
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="checkbox">
+                                            <label>
+                                                <input id="chkpaid" type="checkbox" class="styled" />
+                                                Paid
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-link" data-dismiss="modal">Cancel</button>
+                            <button type="button" id="updateorder" class="btn bg-baropurple"> Update </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!--/ Edit Order-->
+        <!--Delete Order-->
+
+        <div id="order_delete" class="modal fade">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header bg-baropurple">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h6 class="modal-title">Delete Order</h6>
+                    </div>
+                    <form action="#" class="form-horizontal" autocomplete="off">
+                        <div class="modal-body">
+                            <h6> Do you want to Delete this Order ? </h6>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="submit" id="yes_delete" class="btn bg-baropurple">Yes</button>
+                            <button type="button" class="btn btn-link" data-dismiss="modal">No</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!--/Delete Order -->
+    </div>
+    <!-- /page container -->
+</body>
+</html>

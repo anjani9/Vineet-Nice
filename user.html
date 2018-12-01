@@ -1,0 +1,468 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Nice Tailor - Mens & Womens</title>
+    <!-- Global stylesheets -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900" rel="stylesheet" type="text/css">
+    <link href="assets/css/icons/icomoon/styles.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/icons/fontawesome/styles.min.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/core.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/components.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/colors.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/custom.css" rel="stylesheet" type="text/css">
+    <!-- /global stylesheets -->
+    <!-- Core JS files -->
+    <!-- Core JS files -->
+    <script type="text/javascript" src="assets/js/pace.min.js"></script>
+    <script type="text/javascript" src="assets/js/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="assets/js/blockui.min.js"></script>
+    <!-- /core JS files -->
+    <!-- plugin files -->
+    <script type="text/javascript" src="assets/js/app.js"></script>
+    <script type="text/javascript" src="assets/js/uniform.min.js"></script>
+    <script type="text/javascript" src="assets/js/validate.min.js"></script>
+    <script type="text/javascript" src="assets/js/select2.min.js"></script>
+    <script type="text/javascript" src="assets/js/datatables.min.js"></script>
+    <script type="text/javascript" src="assets/js/noty.min.js"></script>
+    <script type="text/javascript" src="assets/js/custom.js"></script>
+    <!-- /plugin files -->
+    <!-- page specific js -->
+    <script type="text/javascript" src="assets/js/user.js"></script>
+    <!-- /page specific js -->
+</head>
+<body>
+    <!-- Main navbar -->
+    <div class="navbar navbar-inverse">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="dashboard.html"><h3>Nice Tailor</h3></a>
+            <ul class="nav navbar-nav visible-xs-block">
+                <li><a data-toggle="collapse" data-target="#navbar-mobile"><i class="icon-tree5"></i></a></li>
+                <li><a class="sidebar-mobile-main-toggle"><i class="icon-paragraph-justify3"></i></a></li>
+            </ul>
+        </div>
+        <div class="navbar-collapse collapse" id="navbar-mobile">
+            <ul class="nav navbar-nav">
+                <li><a class="sidebar-control sidebar-main-toggle hidden-xs"><i class="icon-paragraph-justify3"></i></a></li>
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown dropdown-user">
+                    <a class="dropdown-toggle" data-toggle="dropdown">
+                        <img src="assets/images/placeholder.jpg" alt="">
+                        <span id="adminname"></span>
+                        <i class="caret"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-right">
+                        <li id="aLogout"><a href="#"><i class="icon-switch2"></i> Logout</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- /main navbar -->
+    <!-- Page container -->
+    <div class="page-container">
+        <!-- Page content -->
+        <div class="page-content">
+            <!-- Main sidebar -->
+
+            <div class="sidebar sidebar-main">
+                <div class="sidebar-content">
+                    <!-- User menu -->
+                    <!-- /user menu -->
+                    <!-- Main navigation -->
+                    <div class="sidebar-category sidebar-category-visible">
+                        <div class="category-content no-padding">
+                            <ul class="navigation navigation-main navigation-accordion">
+                                <!-- Main -->
+                                <li class="navigation-header"><span>Main</span> <i class="icon-menu" title="Main pages"></i></li>
+                                <li><a href="dashboard.html"><i class="icon-stats-dots"></i> <span>Dashboard</span></a></li>
+                                <li><a href="order.html"><i class="icon-clipboard3"></i> <span>Orders</span></a></li>
+                                <li class="active"><a href="user.html"><i class="icon-users"></i> <span>User Management</span></a></li>
+                                <li><a href="inventory.html"><i class="icon-cabinet"></i> <span>Inventory Management</span></a></li>
+                                <li><a href="item.html"><i class="icon-stack3"></i> <span>Item Management</span></a></li>
+                                <!--<li><a href="report.html"><i class="icon-file-stats"></i> <span>Reports</span></a></li>-->
+                                <!-- /main -->
+                                <!-- /page kits -->
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- /main navigation -->
+                </div>
+            </div>
+            <!-- /main sidebar -->
+            <!-- Main content -->
+            <div class="content-wrapper">
+                <!-- Page header -->
+                <div class="page-header page-header-default">
+                    <div class="breadcrumb-line">
+                        <h5 class="pageheadertext">User Management</h5>
+                        <ul class="breadcrumb pageheadercrumb">
+                            <li><a href="dashboard.html"><i class="icon-home2 position-left"></i> Home</a></li>
+                            <li class="active">User Management</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- /page header -->
+                <!-- Content area -->
+                <div class="content">
+
+                    <!-- Dashboard content -->
+                    <div class="row">
+
+                        <div class="col-lg-12">
+
+                            <div class="panel panel-flat">
+                                <div class="panel-body">
+                                    <div class="tabbable">
+                                        <ul class="nav nav-tabs nav-tabs-highlight">
+                                            <li class="active"><a href="#customer" data-toggle="tab" data-tab="customer"><i class="icon-address-book2 position-left"></i> Customer List</a></li>
+                                            <li><a href="#employee" data-toggle="tab" data-tab="employee"><i class="icon-users2 position-left"></i> Employee List</a></li>
+                                            <li><a href="#admin" data-toggle="tab" data-tab="admin"><i class="icon-user-tie position-left"></i> Admin List</a></li>
+                                            <li><a href="#createnew" data-toggle="tab" data-tab="create"><i class="icon-user-plus position-left"></i> Create New User</a></li>
+                                        </ul>
+                                        <div class="tab-content">
+                                            <div class="tab-pane fade in active" id="customer">
+                                                <table id="customerList" class="table table-striped table-bordered table-hover">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>First Name</th>
+                                                            <th>Last Name</th>
+                                                            <th>Contact</th>
+                                                            <th>Email</th>
+                                                            <th>Status</th>
+                                                            <th class="text-center">Actions</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody></tbody>
+                                                </table>
+                                            </div>
+                                            <div class="tab-pane fade" id="employee">
+                                                <table id="employeeList" class="table table-striped table-bordered table-hover">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>First Name</th>
+                                                            <th>Last Name</th>
+                                                            <th>Contact</th>
+                                                            <th>Email</th>
+                                                            <th>Salary</th>
+                                                            <th>Status</th>
+                                                            <th class="text-center">Actions</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody></tbody>
+                                                </table>
+                                            </div>
+                                            <div class="tab-pane fade" id="admin">
+                                                <table id="adminList" class="table table-striped table-bordered table-hover">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>User Name</th>
+                                                            <th>First Name</th>
+                                                            <th>Last Name</th>
+                                                            <th>Contact</th>
+                                                            <th>Email</th>
+                                                            <th>Status</th>
+                                                            <th class="text-center">Actions</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody></tbody>
+                                                </table>
+                                            </div>
+                                            <div class="tab-pane fade" id="createnew">
+                                                <form id="userfrm">
+
+                                                    <div class="form-group">
+                                                        <div class="row">
+                                                            <div class="col-sm-4">
+                                                                <label>Select user type</label>
+                                                                <select id="cutype" name="cutype" class="select-search form-control usertype_select" data-placeholder="Select User">
+                                                                    <option value="0"> Select Users </option>
+                                                                    <option value="1" data-user="admin"> Admin </option>
+                                                                    <option value="2" data-user="customer"> Customer </option>
+                                                                    <option value="3" data-user="employee"> Employee </option>
+                                                                </select>
+                                                            </div>
+                                                            <div class="col-sm-4">
+                                                                <label>Contact *</label>
+                                                                <input id="cucontact" name="cucontact" type="text" placeholder="Contact" class="form-control number" maxlength="10" />
+                                                            </div>
+                                                            <div class="col-sm-4">
+                                                                <label class="display-block">&nbsp;</label>
+                                                                <button type="button" class="btn btn-primary pull-left chkuserbtn display-block" onclick="CheckUser()">Check User</button>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <div class="row">
+                                                            <div class="col-sm-4 usertype">
+                                                                <label>First name</label>
+                                                                <input id="cufname" type="text" placeholder="First Name" class="form-control text alluser">
+                                                            </div>
+                                                            <div class="col-sm-4 usertype">
+                                                                <label>Last name</label>
+                                                                <input id="culname" type="text" placeholder="Last Name" class="form-control text alluser">
+                                                            </div>
+                                                            <div class="col-sm-4 usertype">
+                                                                <label>Email</label>
+                                                                <input id="cuemail" type="text" placeholder="email" class="form-control email">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <div class="row">
+                                                            <div class="col-sm-4 usertype onlyemp">
+                                                                <label>Salary</label>
+                                                                <input id="cusalary" type="text" placeholder="Salary" class="form-control number txtemp">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <div class="row">
+                                                            <div class="col-sm-4 usertype onlyadmin">
+                                                                <label>UserName</label>
+                                                                <input id="cuusername" type="text" placeholder="Username" class="form-control text txtadmin">
+                                                            </div>
+                                                            <div class="col-sm-4 usertype onlyadmin">
+                                                                <label>Password</label>
+                                                                <input id="cupassword" type="password" placeholder="Password" class="form-control new_password txtadmin">
+                                                            </div>
+                                                            <div class="col-sm-4 usertype onlyadmin">
+                                                                <label>Re-Confirm Password</label>
+                                                                <input id="cucpassword" type="password" placeholder="Re-confirm password" class="form-control confirm_password txtadmin">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <button type="reset" class="btn btn-primary pull-right" onclick="CreateNewUser()">Create User</button>
+                                                    <button type="button" class="btn btn-default pull-right mr-10" onclick="ResetUser()">Reset</button>
+                                                </form>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <!-- /dashboard content -->
+                    <!-- Footer -->
+                    <div class="footer text-muted text-center">
+                        &copy; 2018. <a href="#">Nice Tailor</a> <a href="#" target="_blank"></a>
+                    </div>
+
+                    <!-- /footer -->
+                </div>
+                <!-- /content area -->
+            </div>
+            <!-- /main content -->
+        </div>
+        <!-- /page content -->
+
+
+        <!--View User-->
+
+        <div id="user_view" class="modal fade">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header bg-baropurple">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h6 class="modal-title"> View User </h6>
+                    </div>
+                    <div class="modal-body" style="overflow-wrap: break-word;">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <div class="form-group has-feedback">
+                                    <label>First Name :</label>
+                                    <input id="vfname" type="text" name="fname" class="form-control" placeholder="First Name" disabled="disabled" />
+                                    <div class="form-control-feedback">
+                                        <i class="icon-pencil text-muted"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="form-group has-feedback">
+                                    <label>Last Name : </label>
+                                    <input id="vlname" type="text" name="lname" class="form-control" placeholder="Last Name" disabled="disabled" />
+                                    <div class="form-control-feedback">
+                                        <i class="icon-pencil text-muted"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="form-group has-feedback">
+                                    <label>Contact :</label>
+                                    <input id="vcontact" type="text" name="contact" class="form-control" placeholder="Contact" disabled="disabled" />
+                                    <div class="form-control-feedback">
+                                        <i class="icon-pencil text-muted"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <div class="form-group has-feedback">
+                                    <label>Email : </label>
+                                    <input id="vemail" type="text" name="email" class="form-control" placeholder="Email" disabled="disabled" />
+                                    <div class="form-control-feedback">
+                                        <i class="icon-mention text-muted"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4 vemp">
+                                <div class="form-group has-feedback">
+                                    <label>Salary : </label>
+                                    <input id="vsalary" type="text" name="salary" class="form-control vemptxt" placeholder="Salary" disabled="disabled" />
+                                    <div class="form-control-feedback">
+                                        <i class="fa fa-rupee text-muted"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4 vadmin">
+                                <div class="form-group has-feedback">
+                                    <label>UserName : </label>
+                                    <input id="vusername" type="text" name="username" class="form-control vadmintxt" placeholder="Username" disabled="disabled" />
+                                    <div class="form-control-feedback">
+                                        <i class="icon-pencil text-muted"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button class="btn bg-baropurple" data-dismiss="modal">Cancel </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--/View User-->
+        <!--Edit User-->
+
+        <div id="user_edit" class="modal fade">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header bg-baropurple">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h6 class="modal-title"> Edit User </h6>
+                    </div>
+                    <form action="#" class="form-validate-jquery" id="userEdit" autocomplete="off">
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="form-group has-feedback">
+                                        <label>First Name* :</label>
+                                        <input id="efname" type="text" name="efname" class="form-control text" placeholder="First Name" />
+                                        <div class="form-control-feedback">
+                                            <i class="icon-pencil text-muted"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="form-group has-feedback">
+                                        <label>Last Name* : </label>
+                                        <input id="elname" type="text" name="elname" class="form-control text" placeholder="Last Name" />
+                                        <div class="form-control-feedback">
+                                            <i class="icon-pencil text-muted"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="form-group has-feedback">
+                                        <label>Contact* :</label>
+                                        <input id="econtact" type="text" name="econtact" class="form-control number" placeholder="Contact" disabled="disabled"/>
+                                        <div class="form-control-feedback">
+                                            <i class="icon-pencil text-muted"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="form-group has-feedback">
+                                        <label>Email : </label>
+                                        <input id="eemail" type="text" name="eemail" class="form-control email" placeholder="Email" />
+                                        <div class="form-control-feedback">
+                                            <i class="icon-mention text-muted"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4 eemp">
+                                    <div class="form-group has-feedback">
+                                        <label>Salary* : </label>
+                                        <input id="esalary" type="text" name="esalary" class="form-control number" placeholder="Salary" />
+                                        <div class="form-control-feedback">
+                                            <i class="fa fa-rupee text-muted"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4 eadmin">
+                                    <div class="form-group has-feedback">
+                                        <label>UserName* : </label>
+                                        <input id="eusername" type="text" name="eusername" class="form-control text" placeholder="Username" disabled="disabled"/>
+                                        <div class="form-control-feedback">
+                                            <i class="icon-pencil text-muted"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="checkbox">
+                                            <label>
+                                                <input id="chkenabled" type="checkbox" class="styled" />
+                                                Enabled
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-link" data-dismiss="modal">Cancel</button>
+                            <button type="button" id="updateuser" class="btn bg-baropurple"> Update </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!--/ Edit User-->
+        <!--Delete User-->
+
+        <div id="user_delete" class="modal fade">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header bg-baropurple">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h6 class="modal-title">Delete User</h6>
+                    </div>
+                    <form action="#" class="form-horizontal" autocomplete="off">
+                        <div class="modal-body">
+                            <h6> Do you want to Delete this User ? </h6>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="submit" id="yes_delete" class="btn bg-baropurple">Yes</button>
+                            <button type="button" class="btn btn-link" data-dismiss="modal">No</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!--/Delete User -->
+
+    </div>
+    <!-- /page container -->
+</body>
+</html>

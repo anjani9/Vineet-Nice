@@ -1,0 +1,723 @@
+.navigation > li.active > a,
+.navigation > li.active > a:hover,
+.navigation > li.active > a:focus {
+    background-color: transparent;
+    color: #fff;
+}
+
+.navigation > li > a {
+    padding-left: 25px;
+}
+
+.navigation > li.active > a {
+    padding-left: 20px;
+}
+
+.navigation > li.active {
+    border-left: 5px solid #ebb820;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+    .navigation > li.active:after {
+        top: 11px;
+        right: 0;
+        content: '';
+        position: absolute;
+        display: inline-block;
+        border-top: 12px solid transparent;
+        border-bottom: 12px solid transparent;
+        border-right: 10px solid #E9F0F5;
+    }
+
+.liactive {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+    .liactive > a {
+        background-color: rgba(0, 0, 0, 0.1);
+        color: #ffffff;
+    }
+
+.navigation li.liactive > .has-ul:after {
+    -webkit-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    transform: rotate(90deg);
+}
+
+@media (min-width: 769px) {
+    .sidebar-xs .sidebar-main .navigation > li.liactive > ul {
+        display: none !important;
+    }
+
+    .sidebar-xs .sidebar-main .navigation > li.liactive:hover > ul {
+        display: block !important;
+    }
+
+    .sidebar-xs .sidebar-main .navigation > li > a > span {
+        display: none;
+        position: absolute;
+        top: 0;
+        right: -260px;
+        background-color: #ebb820;
+        border: 1px solid #ebb820;
+        padding: 11px 20px;
+        width: 260px;
+        text-align: left;
+        color: #fff;
+        cursor: pointer;
+        border-bottom-right-radius: 3px;
+        border-top-right-radius: 3px;
+    }
+}
+
+/*header*/
+.navbar-brand {
+    float: left;
+    padding: 7px 20px;
+    font-size: 14px;
+    line-height: 20px;
+    height: 46px;
+}
+
+    .navbar-brand > img {
+        margin-top: 0px;
+        height: 100%;
+    }
+
+    .navbar-brand > h3 {
+        margin: 0px;
+        padding: 0px;
+        line-height: 1.5;
+    }
+
+.bg-onsite {
+    background-color: #ebb820 !important;
+    border-color: #ebb820 !important;
+    color: #f7f7f7;
+}
+
+.bg-onsite-modal {
+    background-color: #ebb820 !important;
+    border-color: #ebb820 !important;
+}
+
+.page-title {
+    padding: 8px 0px 8px 0;
+}
+
+.aligncancel {
+    margin-right: 5px;
+}
+
+.alignsend {
+    margin-left: 5px;
+}
+
+.pageheadertext {
+    float: left;
+    margin-top: 9px;
+    margin-bottom: 9px;
+}
+
+.breadcrumb-line:first-child {
+    border-top-width: 0;
+    border-bottom: none;
+}
+
+.pageheadercrumb {
+    float: right !important;
+    padding: 12px 0;
+}
+
+@media (max-width: 768px) {
+    .pageheadercrumb {
+        margin-right: 0px !important;
+    }
+}
+
+
+/*dual list box  begin*/
+
+.react-dual-listbox {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+    .react-dual-listbox * {
+        box-sizing: border-box;
+    }
+
+    .react-dual-listbox button,
+    .react-dual-listbox select {
+        line-height: 1.42857;
+        font-family: inherit;
+    }
+
+.rdl-available,
+.rdl-selected {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex: 1 1 0px;
+    flex: 1 1 0;
+    -ms-flex-item-align: stretch;
+    align-self: stretch;
+}
+
+.rdl-control-label {
+    position: absolute;
+    clip: rect(0 0 0 0);
+}
+
+.rdl-control {
+    display: block;
+    -ms-flex-item-align: stretch;
+    -ms-grid-row-align: stretch;
+    align-self: stretch;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    padding: 8px 12px;
+    width: 100%;
+    color: #333;
+    font-size: 14px;
+}
+
+    .rdl-control optgroup {
+        font: inherit;
+        font-weight: 700;
+    }
+
+.rdl-actions {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    margin: 0 10px;
+}
+
+.rdl-actions-right,
+.rdl-actions-left {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+
+.rdl-actions-right {
+    margin-bottom: 10px;
+}
+
+.rdl-move {
+    margin-bottom: 5px;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    background: #fff;
+    cursor: pointer;
+    padding: 5px 10px;
+    color: #333;
+    font-size: 12px;
+}
+
+    .rdl-move:active, .rdl-move:focus {
+        border-color: #8c8c8c;
+        background: #e6e6e6;
+    }
+
+    .rdl-move:focus {
+        outline: thin dotted;
+        outline-offset: -2px;
+    }
+
+    .rdl-move:hover {
+        border-color: #adadad;
+        background: #e6e6e6;
+    }
+
+    .rdl-move:last-child {
+        margin-bottom: 0;
+    }
+
+    .rdl-move i {
+        margin: 0 -1px;
+    }
+/*dual list box  end*/
+.editicon {
+    display: inline-block;
+    margin: 0px 5px;
+}
+
+.clickpointer {
+    cursor: pointer;
+}
+
+/* Dashboard Link*/
+.linkColor {
+    color: #fff;
+}
+
+.alignMe {
+    padding-top: 13%;
+}
+
+.media-list > span:last-child > li.divider {
+    display: none;
+}
+
+.alignMeImport {
+    padding-top: 10%;
+}
+
+.mytagInput {
+    display: none;
+}
+
+.mytagInputLabel {
+    display: none;
+}
+
+
+/*----- Calendar -----*/
+.fc {
+    direction: ltr;
+    text-align: left;
+}
+
+.fc-rtl {
+    text-align: right;
+}
+
+body .fc { /* extra precedence to overcome jqui */
+    font-size: 1em;
+}
+
+
+/* Colors
+--------------------------------------------------------------------------------------------------*/
+
+.fc-unthemed th,
+.fc-unthemed td,
+.fc-unthemed thead,
+.fc-unthemed tbody,
+.fc-unthemed .fc-divider,
+.fc-unthemed .fc-row,
+.fc-unthemed .fc-content, /* for gutter border */
+.fc-unthemed .fc-popover,
+.fc-unthemed .fc-list-view,
+.fc-unthemed .fc-list-heading td {
+    border-color: #ddd;
+}
+
+.fc-unthemed .fc-popover {
+    background-color: #fff;
+}
+
+    .fc-unthemed .fc-divider,
+    .fc-unthemed .fc-popover .fc-header,
+    .fc-unthemed .fc-list-heading td {
+        background: #eee;
+    }
+
+        .fc-unthemed .fc-popover .fc-header .fc-close {
+            color: #666;
+        }
+
+.fc-unthemed td.fc-today {
+    background: #fcf8e3;
+}
+
+.fc-highlight { /* when user is selecting cells */
+    background: #bce8f1;
+    opacity: .3;
+}
+
+.fc-bgevent { /* default look for background events */
+    background: rgb(143, 223, 130);
+    opacity: .3;
+}
+
+.fc-nonbusiness { /* default look for non-business-hours areas */
+    /* will inherit .fc-bgevent's styles */
+    background: #d7d7d7;
+}
+
+.fc-unthemed .fc-disabled-day {
+    background: #d7d7d7;
+    opacity: .3;
+}
+
+.ui-widget .fc-disabled-day { /* themed */
+    background-image: none;
+}
+
+
+
+.fc table {
+    width: 100%;
+    box-sizing: border-box; /* fix scrollbar issue in firefox */
+    table-layout: fixed;
+    border-collapse: collapse;
+    border-spacing: 0;
+    font-size: 1em; /* normalize cross-browser */
+}
+
+.fc th {
+    text-align: center;
+}
+
+.fc th,
+.fc td {
+    border-style: solid;
+    border-width: 1px;
+    padding: 0;
+    vertical-align: top;
+}
+
+    .fc td.fc-today {
+        border-style: double; /* overcome neighboring borders */
+    }
+
+.fc-event-dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+}
+
+/* view wrapper */
+
+.fc-rtl .fc-list-view {
+    direction: rtl; /* unlike core views, leverage browser RTL */
+}
+
+.fc-list-view {
+    border-width: 1px;
+    border-style: solid;
+}
+
+/* table resets */
+
+.fc .fc-list-table {
+    table-layout: auto; /* for shrinkwrapping cell content */
+}
+
+.fc-list-table td {
+    border-width: 1px 0 0;
+    padding: 8px 14px;
+}
+
+.fc-list-table tr:first-child td {
+    border-top-width: 0;
+}
+
+/* day headings with the list */
+
+.fc-list-heading {
+    border-bottom-width: 1px;
+}
+
+    .fc-list-heading td {
+        font-weight: bold;
+    }
+
+.fc-ltr .fc-list-heading-main {
+    float: left;
+}
+
+.fc-ltr .fc-list-heading-alt {
+    float: right;
+}
+
+.fc-rtl .fc-list-heading-main {
+    float: right;
+}
+
+.fc-rtl .fc-list-heading-alt {
+    float: left;
+}
+
+/* event list items */
+
+.fc-list-item.fc-has-url {
+    cursor: pointer; /* whole row will be clickable */
+}
+
+.fc-list-item:hover td {
+    background-color: #f5f5f5;
+}
+
+.fc-list-item-marker,
+.fc-list-item-time {
+    white-space: nowrap;
+    width: 1px;
+}
+
+/* make the dot closer to the event title */
+.fc-ltr .fc-list-item-marker {
+    padding-right: 0;
+}
+
+.fc-rtl .fc-list-item-marker {
+    padding-left: 0;
+}
+
+.fc-list-item-title a {
+    /* every event title cell has an <a> tag */
+    text-decoration: none;
+    color: inherit;
+}
+
+    .fc-list-item-title a[href]:hover {
+        /* hover effect only on titles with hrefs */
+        text-decoration: underline;
+    }
+
+/* message when no events */
+
+.fc-list-empty-wrap2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.fc-list-empty-wrap1 {
+    width: 100%;
+    height: 100%;
+    display: table;
+}
+
+.fc-list-empty {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.fc-unthemed .fc-list-empty { /* theme will provide own background */
+    background-color: #eee;
+}
+
+.themespan {
+    width: 14px;
+    height: 14px;
+    display: inline-block;
+    border: 1px solid gray;
+}
+
+.sp-container {
+    z-index: 9999;
+}
+
+.dropdown-content-heading {
+    border-bottom: 1px solid #e5e5e5;
+    margin-bottom: 12px;
+}
+
+.top-divider {
+    border-top: 1px solid #ddd;
+    padding: 10px;
+}
+
+.boxshadow :hover {
+    box-shadow: 0 2px 7px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19) !important;
+}
+
+.border-left-yellow {
+    border-left-color: #f6ff21;
+}
+
+
+/*Form Management*/
+
+.item-div {
+    clear: both;
+    background: #fff;
+    border: 1px solid #ccc;
+    padding: 10px;
+    line-height: 2;
+    margin-bottom: 5px;
+    width: 70%;
+}
+
+    .item-div ul {
+        list-style: none;
+    }
+
+.common-title {
+    background: #333;
+    color: #ddd;
+    padding: 10px;
+    margin-bottom: 0px;
+}
+
+.link_btn {
+    border: 0;
+    background: transparent;
+    color: deepskyblue;
+}
+
+.pad-10 {
+    padding: 10px;
+}
+
+.margin-left-5 {
+    margin-left: 5px;
+}
+
+#form_details_div .nav-tabs-left > .nav-tabs-highlight > li {
+    /*border-top:1px solid #ddd;
+    border-left:1px solid #ddd;
+    border-bottom:1px solid #ddd;
+    border-bottom-color: #ddd;
+    border-right-color: transparent;*/
+    border-color: transparent;
+}
+
+    #form_details_div .nav-tabs-left > .nav-tabs-highlight > li.active {
+        border: 1px solid;
+        border-top-color: #ddd;
+        border-left-color: #EC407A;
+        border-bottom-color: #ddd;
+        border-right-color: transparent;
+    }
+
+        #form_details_div .nav-tabs-left > .nav-tabs-highlight > li.active a {
+            border: none;
+        }
+
+
+/* Entity Management */
+
+.btnTypeDiv {
+    padding: 5px;
+}
+
+.inlineUl {
+    display: inline;
+    list-style: none;
+}
+
+    .inlineUl li {
+        float: left;
+    }
+
+.entityAccessDiv {
+    border-top: 1px dotted #333;
+    padding: 2% 0px;
+}
+/* End Of Entity Management */
+
+
+#anytime-time {
+    z-index: 10000;
+}
+
+
+.AnyTime-win {
+    padding: 14px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    z-index: 10000 !important;
+    -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+
+
+/* 
+  Datatable CSS Changes
+  *** dont change too much 
+ */
+.datatable-header {
+    padding: 5px 20px 0px 20px;
+}
+
+.member-management-div .panel-heading {
+    padding: 5px 6px 3px 20px !important;
+    border-bottom: 0px solid transparent;
+    /* border-left: 0px  solid transparent; */
+    /* border-bottom: 0px  solid transparent;
+  border-bottom: 0px  solid transparent; */
+}
+
+.member-management-div .panel-body {
+    padding: 15px;
+}
+
+.member-management-div .panel {
+    margin-bottom: 0px;
+}
+
+.member-management-div .dataTables_wrapper .table-bordered {
+    border: 1px;
+}
+/*trash icon */
+span.untrash {
+    height: 32px;
+    padding-left: 36px;
+    background: url(/images/untrash.png) no-repeat 10px center;
+    cursor: pointer;
+}
+
+.editicon .icon-blocked {
+    color: red;
+}
+
+#Timeline {
+    overflow: 'scroll';
+}
+
+div.google-visualization-tooltip {
+    width: auto;
+    height: auto;
+    background-color: #fcfcfe;
+    color: #000000;
+    text-align: center;
+    vertical-align: middle;
+}
+
+
+
+.daterangepicker.dropdown-menu {
+    max-width: none;
+    background-color: transparent;
+    border: 0;
+    z-index: 10000;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.panelcustom {
+    border: 1px solid rgb(221, 221, 221);
+    padding: 5px;
+}
+
+.formgroupContainer .form-group {
+    margin-bottom: 0px !important;
+}
+
+.ui {
+    position: relative;
+    background: #FFFFFF;
+    -webkit-box-shadow: 0px 1px 2px 0 rgba(34, 36, 38, 0.15);
+    box-shadow: 0px 1px 2px 0 rgba(34, 36, 38, 0.15);
+    margin: 1rem 0em;
+    padding: 1em 1em;
+    border-radius: 0.28571429rem;
+    border: 1px solid rgba(34, 36, 38, 0.15);
+}
+
+    .ui.large.form {
+        font-size: 1.14285714rem;
+    }
+
+.bg-baropurple{
+    background-color:#ebb820;
+    color: #ffffff;
+}
