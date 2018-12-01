@@ -1,2 +1,2 @@
 # Vineet-Nice
-Colllege project 
+College project 
