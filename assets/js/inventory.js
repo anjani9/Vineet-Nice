@@ -41,6 +41,8 @@ function InventoryList() {
                     listdata.push({
                         inid: value.inid,
                         name: value.name,
+						category: value.category,
+						brand: value.brand,
                         qty: value.qty,
                         price: value.price,
                         status: value.status
@@ -64,6 +66,8 @@ function InventoryList() {
                 }],
                 columns: [
                     { data: "name" },
+					{ data: "category" },
+					{ data: "brand" },
                     { data: "qty" },
                     { data: "price" },
                     {
@@ -95,11 +99,13 @@ function CreateNewInventory() {
         var queryfor, name, price;
 
         name = $('#cinventoryname').val();
+		category = $('#cinventorycategory').val();
+		brand = $('#cinventorybrand').val();
         qty = $('#cinventoryqty').val();
         price = $('#cinventoryprice').val();
         queryfor = "InsertInventory";
 
-        var dataString = "queryfor=" + queryfor + "&name=" + name + "&qty=" + qty + "&price=" + price;
+        var dataString = "queryfor=" + queryfor + "&name=" + name + "&qty=" + qty + "&price=" + price + "&category=" + category + "&brand=" + brand;
 
         $.ajax({
             type: 'POST',
@@ -116,9 +122,11 @@ function CreateNewInventory() {
 }
 
 function ViewInventory(viewData) {
-    $('#inventory_view').on('shown.bs.modal', function () {
+	$('#inventory_view').on('shown.bs.modal', function () {
         $('#vinventory_name').val(viewData.name);
-        $('#vinventory_qty').val(viewData.qty);
+        $('#vinventory_category').val(viewData.category);
+		$('#vinventory_brand').val(viewData.brand);
+		$('#vinventory_qty').val(viewData.qty);
         $('#vinventory_price').val(viewData.price);
         $(this).off('shown.bs.modal');
     });
@@ -132,7 +140,9 @@ function EditInventory(editData) {
     $('#inventory_edit').on('shown.bs.modal', function () {
 
         $('#einventoryname').val(editData.name);
-        $('#einventoryqty').val(editData.qty);
+        $('#einventorycategory').val(editData.category);
+		$('#einventorybrand').val(editData.brand);
+		$('#einventoryqty').val(editData.qty);
         $('#einventoryprice').val(editData.price);
 
         if (editData.status == 'E') {
@@ -148,7 +158,9 @@ function EditInventory(editData) {
     $("#updateinventory").unbind('click');
     $("#updateinventory").click(function () {
         update.name = $('#einventoryname').val();
-        update.qty = $('#einventoryqty').val();
+        update.category = $('#einventorycategory').val();
+		update.brand = $('#einventorybrand').val();
+		update.qty = $('#einventoryqty').val();
         update.price = $('#einventoryprice').val();
         update.status = $('#chkenabled').is(":checked") ? 'E' : 'D';
         UpdateInventory(update);
@@ -160,9 +172,11 @@ function UpdateInventory(updateData) {
     var inid = updateData.inid;
     var name = updateData.name;
     var qty = updateData.qty;
+	var category = updateData.category;
+	var brand = updateData.brand;
     var price = updateData.price;
     var status = updateData.status;
-    var dataString = "queryfor=" + queryfor + "&inid=" + inid + "&name=" + name + "&qty=" + qty + "&price=" + price + "&status=" + status;
+    var dataString = "queryfor=" + queryfor + "&inid=" + inid + "&name=" + name + "&qty=" + qty + "&price=" + price + "&status=" + status + "&category=" + category + "&brand=" + brand;
     $.ajax({
         type: 'POST',
         url: "config/common.php",
