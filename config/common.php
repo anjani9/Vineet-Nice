@@ -599,7 +599,14 @@ if ($queryfor === "GetInventoryData") {
         $table = '[';
         $tempt = $table;
         foreach ($inventorydataresult as $rows) {
-            $table = '{"inid":"' . $rows['inid'] . '","name":"' . $rows['name'] . '","qty":"' . $rows['qty'] . '","price":"' . $rows['price'] . '","createddate":"' . $rows['createddate'] . '","status":"' . $rows['status'] . '"},';
+            $table = '{"inid":"' . $rows['inid'] . 
+					 '","name":"' . $rows['name'] . 
+					 '","category":"' . $rows['category'] . 
+					 '","brand":"' . $rows['brand'] . 
+					 '","qty":"' . $rows['qty'] . 
+					 '","price":"' . $rows['price'] . 
+					 '","createddate":"' . $rows['createddate'] . 
+					 '","status":"' . $rows['status'] . '"},';
             $tempt = $tempt . $table;
         }
         $table = '';
@@ -622,9 +629,11 @@ if ($queryfor === "InsertInventory") {
     
     $name  = $_POST['name'];
     $qty   = $_POST['qty'];
+	$category   = $_POST['category'];
+	$brand   = $_POST['brand'];
     $price = $_POST['price'];
     
-    $insertinventorysresult = $myclassobj->InsertInventory($name, $qty, $price);
+    $insertinventorysresult = $myclassobj->InsertInventory($name, $qty, $price,$category,$brand	);
     if ($insertinventorysresult > 0) {
         $result = '{"code":"success","msg":"Inventory Inserted Successfully"}';
         echo $result;
@@ -642,10 +651,12 @@ if ($queryfor === "Updatinventory") {
     $inid   = $_POST['inid'];
     $name   = $_POST['name'];
     $qty    = $_POST['qty'];
+	$category   = $_POST['category'];
+	$brand   = $_POST['brand'];
     $price  = $_POST['price'];
     $status = $_POST['status'];
     
-    $updateinventorysresult = $myclassobj->UpdatInventory($inid, $name, $qty, $price, $status);
+    $updateinventorysresult = $myclassobj->UpdatInventory($inid, $name, $qty, $price,$category,$brand, $status);
     if ($updateinventorysresult > 0) {
         $result = '{"code":"success","msg":"Inventory Updated Successfully"}';
         echo $result;

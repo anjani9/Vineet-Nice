@@ -270,20 +270,19 @@ class Myclass
     }
     
     //Insert Inventory
-    public function InsertInventory($name, $qty, $price)
+    public function InsertInventory($name, $qty, $price,$category,$brand)
     {
         $objconn = new Database();
-        $sql     = "insert into inventory (name, qty, price, status, createddate) 
-        values ('" . $name . "','" . $qty . "','" . $price . "','E',NOW())";
+        $sql     = "insert into inventory (name, qty, price, category,brand, status, createddate) values ('" . $name . "','" . $qty . "','" . $price . "','" . $category . "','" . $brand . "','E',NOW())";
         $result  = $objconn->dbconn($sql);
         return $result;
     }
     
     //Update Inventory
-    public function UpdatInventory($inid, $name, $qty, $price, $status)
+    public function UpdatInventory($inid, $name, $qty, $price,$category,$brand, $status)
     {
         $objconn = new Database();
-        $sql     = "update inventory SET name='" . $name . "',qty='" . $qty . "',price='" . $price . "',status='" . $status . "' where inid ='" . $inid . "'";
+        $sql     = "update inventory SET name='" . $name . "',qty='" . $qty . "',price='" . $price . "',category='" . $category . "',brand='" . $brand . "',status='" . $status . "' where inid ='" . $inid . "'";
         $result  = $objconn->dbconn($sql);
         return $result;
     }

@@ -8,7 +8,7 @@ class Database
 	public function dbconn($sql)
 		{
 			
-			$conn = mysqli_connect("localhost" , "root" , "" , "nice")
+			$conn = mysqli_connect("localhost" , "root" , "" , "inventory")
 			or die ('Could not connect to server');
 			if($sql != ''){
 
